@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<h1>This is an additional web page</h1>
+<p>1、restful接口调用</p>
+<button id="queryRestfulAPI">queryRestfulAPI</button>
+<!--onclick="queryRestfulAPI()"-->
+<div id="contenntsStr">dddd</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#queryRestfulAPI').click(function(){
+
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8080/hello",
+                dataType: "jsonp",//解决跨域问题
+                success: function(data) {
+                    alert(111);
+
+                },
+                error: function() {
+                    alert(222);
+
+                }
+            })
+        });
+    });
+
+
+
+
+
+//    function queryRestfulAPI() {
+//        //document.getElementById("contenntsStr").innerHTML ='dddsss';
+//        $('#contenntsStr').html('2222');
+//    }
+</script>
+</body>
+</html>
