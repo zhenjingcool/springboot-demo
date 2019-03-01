@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>This is an additional web page</h1>
-<p>1、restful接口调用</p>
+<p>1、restful接口调用，前台使用ajax请求后台数据，后台开放restful接口localhost:8080/hello供前台调用，需要注意的是由于前后台域名不同，需要解决跨域调用问题</p>
 <button id="queryRestfulAPI">queryRestfulAPI</button>
 <!--onclick="queryRestfulAPI()"-->
-<div id="contenntsStr">dddd</div>
+<div id="contenntsStr"></div>
 
 <script type="text/javascript">
     $(function(){
@@ -18,9 +18,15 @@
             $.ajax({
                 type: "get",
                 url: "http://localhost:8080/hello",
+                contentType: 'application/json;charset=utf-8',
                 dataType: "jsonp",//解决跨域问题
+//                jsonp:'callback',
                 success: function(data) {
-                    alert(111);
+//                    alert(data.firstName);
+//                    for(var i in data) {
+//                        alert(i+":"+data[i]);//循环输出a:1,b:2,etc.
+//                    }
+                    $('#contenntsStr').html('firstName='+data.firstName+',lastName='+data.lastName);
 
                 },
                 error: function() {
