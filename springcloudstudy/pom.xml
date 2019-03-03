@@ -33,6 +33,7 @@
         <module>cloud-config-server</module>
         <module>cloud-simple-services</module>
         <module>cloud-eureka-server</module>
+        <module>cloud-simple-ui</module>
     </modules>
 
 
