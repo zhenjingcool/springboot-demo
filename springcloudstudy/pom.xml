@@ -31,6 +31,8 @@
     <modules>
         <module>cloud-config-repo</module>
         <module>cloud-config-server</module>
+        <module>cloud-simple-service</module>
+        <module>cloud-simple-services</module>
     </modules>
 
 
