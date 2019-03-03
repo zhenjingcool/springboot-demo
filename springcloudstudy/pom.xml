@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.RELEASE</version>
+                <version>Dalston.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -31,8 +31,8 @@
     <modules>
         <module>cloud-config-repo</module>
         <module>cloud-config-server</module>
-        <module>cloud-simple-service</module>
         <module>cloud-simple-services</module>
+        <module>cloud-eureka-server</module>
     </modules>
 
 
