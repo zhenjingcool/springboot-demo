@@ -62,3 +62,5 @@ spring cloud之旅
     启动服务端，再启动客户端，当客户端在启动日志中打印出DiscoveryClient_CLOUD-SIMPLE-SERVICES/PC201606262118:cloud-simple-services:8081 - registration status: 204时，说明服务已注册到注册服务器，
     同时注册服务器后台日志会打印出Registered instance CLOUD-SIMPLE-SERVICES/PC201606262118:cloud-simple-services:8081 with status UP (replication=false)
     
+    
+3、简单应用cloud-simple-ui，使用了配置管理服务器、注册服务器、断路器、负载均衡器
