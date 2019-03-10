@@ -34,6 +34,9 @@
         <module>cloud-simple-services</module>
         <module>cloud-eureka-server</module>
         <module>cloud-simple-ui</module>
+        <module>cloud-thrift-interface</module>
+        <module>cloud-thrift-server</module>
+        <module>cloud-thrift-client</module>
     </modules>
 
 

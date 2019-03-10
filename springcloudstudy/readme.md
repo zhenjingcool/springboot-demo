@@ -64,3 +64,18 @@ spring cloud之旅
     
     
 3、简单应用cloud-simple-ui，使用了配置管理服务器、注册服务器、断路器、负载均衡器
+
+
+4、thrift、zookeeper建立微服务(https://www.cnblogs.com/skyblog/p/5535418.html)
+4.1、Thrift是一个跨语言的服务部署框架，通过IDL（Interface Definition Language，接口定义语言）来定义RPC接口，然后通过thrift编译器
+生成不同语言的代码，并由生成的代码负责RPC协议层和传输层的实现。
+4.2、定义接口(.thrift文件)，并生成接口代码
+    （1）、下载thrift-0.9.2.tar.gz，解压到C:/thrift，运行thrift.exe --gen java D:\XXX\UserService.thrift,生成接口代码，拷贝到
+        cloud-thrift-interface工程下面。
+4.3、搭建zookeeper集群。下载zookeeper-3.4.13.tar.gz，解压，conf目录下创建zookeeper配置文件zoo.cfg，设置心跳间隔tickTime，监听的客户端端
+口clientPort等信息，启动zookeeper。
+4.4、服务端service，cloud-thrift-server
+    （1）、UserServiceImpl实现接口，并实现接口中的方法，服务提供
+    （2）、ThriftConfig，把实现类注册进Thrift服务器
+    （3）、ZooKeeperConfig，将服务实例注册进zookeeper，zookeeper集群节点通过zookeeper.server.list设置，这里只有一个节点
+4.5、客户端service，cloud-thrift-client，客户端需要及时监听服务列表的变化，并作出负载均衡
